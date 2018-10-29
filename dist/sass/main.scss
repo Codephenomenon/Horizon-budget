@@ -1,0 +1,46 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "layout/header";
+@import "layout/content";
+@import "layout/footer";
+
+* {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include respond(desktop) {
+  font-size: 62.5%;
+  }
+  @include respond(tablet-bg) {
+    font-size: 56.25%;
+  }
+  @include respond(tablet) {
+    font-size: 50%;
+  }
+  @include respond(phone) {
+    font-size: 40%;
+  }
+}
+
+.container {
+  font-family: 'Titillium Web', sans-serif;
+  display: grid;
+  overflow: hidden;
+  grid-template-rows: 12rem min-content 90rem min-content 10rem min-content;
+  grid-template-columns: [full-start] minmax(5rem,1fr) [center-start] repeat(10, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(5rem,1fr) [full-end];
+  @include respond(tablet-bg) {
+    grid-template-rows: 12rem min-content 120rem min-content 10rem min-content;
+  }
+  @include respond(tablet) {
+    grid-template-columns:[center-start] repeat(10, [col-start] minmax(min-content, 2rem) [col-end]) [center-end];
+  }
+  @include respond(phone) {
+    grid-template-columns:[center-start] repeat(10, [col-start] 1fr [col-end]) [center-end];
+  }
+}

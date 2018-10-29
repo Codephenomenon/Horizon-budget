@@ -1,0 +1,190 @@
+.head {
+  background: linear-gradient($gold-dark, $gold);
+  grid-column: center-start / center-end;
+  grid-row: 1/2;
+  position: relative;
+  color: $font;
+
+  .menu {
+
+      &_btn {
+        display: none;
+        &-label {
+          background-color: $yellow;
+          position: absolute;
+          @include centerElement;
+          padding: 1rem 3rem;
+          z-index: 10;
+          transition: all 0.4s ease-in;
+
+          i {
+            color: $white;
+            font-size: 4rem;
+          }
+
+          &:hover {
+            transform: translate(-50%, -60%);
+            box-shadow: 0.25rem 0.5rem 2rem rgba($black, 0.4);
+          }
+
+        }
+      }
+
+      &_background {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        position: absolute;
+        background-image: radial-gradient($gold, $gold-dark);
+        transition: all 0.4s ease-in;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+      }
+
+      &_sub {
+        &-menu {
+          position: absolute;
+          left: 50%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          top: 20rem;
+          transform: translate(500%, -50%);
+          transition: all 0.45s ease-in;
+          opacity: 0;
+          color: $font;
+          z-index: 10;
+
+          &_select {
+            width: 4rem;
+            height: 3rem;
+            font-size: 2rem;
+            border: none;
+            float: left;
+            @include respond(phone) {
+              width: 5rem;
+            }
+          }
+
+          &_description {
+            height: 3rem;
+            font-size: 2rem;
+            width: 25rem;
+            border: none;
+            float: left;
+            background-color: rgba($black, 0.25);
+            color: $white;
+            padding-left: 1rem;
+            @include respond(phone) {
+              width: 17.5rem;
+            }
+          }
+
+          &_value {
+            height: 3rem;
+            font-size: 2rem;
+            width: 15rem;
+            border: none;
+            float: left;
+            padding-left: 1rem;
+            @include respond(phone) {
+              width: 9rem;
+            }
+          }
+
+          &_date {
+            height: 3rem;
+            font-size: 2rem;
+            width: 15rem;
+            border: none;
+            border-left: 1px solid rgba($font, 0.25);
+            padding-left: 0.5rem;
+            float: left;
+            @include respond(phone) {
+            width: 14rem;
+            }
+          }
+
+          &_btn {
+            height: 3rem;
+            width: 3rem;
+            font-size: 1.5rem;
+            background-color: $orange;
+            color: $white;
+            border: none;
+            float: left;
+          }
+        }
+
+        &-totals {
+          position: absolute;
+          left: 50%;
+          top: 30rem;
+          transform: translate(-500%, -50%);
+          transition: all 0.45s ease-in;
+          opacity: 0;
+          color: $white;
+          z-index: 10;
+          transition: all 0.3s ease-in;
+
+          &-income {
+            width: 40rem;
+            height: 5rem;
+            margin: 0rem 0rem 2rem 0rem;
+            background-color: lighten($sky, 15%);
+            box-shadow: 2px 2px 3px rgba($black, 0.3);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            &:hover {
+              background-color: lighten($sky, 9%);
+            }
+            span {margin: 0rem 0.25rem;}
+          }
+
+          &-expense {
+            width: 40rem;
+            height: 5rem;
+            background-color: lighten($red, 15%);
+            box-shadow: 2px 2px 3px rgba($black, 0.3);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            &:hover {
+              background-color: lighten($red, 9%);
+            }
+            span {margin: 0rem 0.25rem;}
+          }
+        }
+      }
+    }
+
+    .menu_btn:checked ~ .menu_btn-label {
+      transform: translate(-50%, -60%);
+      box-shadow: 0.25rem 0.5rem 2rem rgba($black, 0.4);
+      background-color: lighten($red, 25%);
+    }
+
+    .menu_btn:checked ~ .menu_btn-label i {
+      transform: rotate(45deg);
+    }
+
+    .menu_btn:checked ~ .menu_background {
+      transform: scale(225);
+    }
+
+    .menu_btn:checked ~ .menu_sub-menu {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    .menu_btn:checked ~ .menu_sub-totals {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+}

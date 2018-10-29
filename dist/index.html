@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+    <title>Horizon</title>
+</head>
+<body>
+  <div class="container">
+    <header class="head">
+      <div class="menu">
+        <!-- Income -->
+        <input type="checkbox" class="menu_btn" id="item-toggle" />
+        <label for="item-toggle" class="menu_btn-label"><i class="fa fa-plus-circle"></i></label>
+        <div class="menu_background"></div>
+        <div class="menu_sub-menu">
+          <select id="addType" class="menu_sub-menu_select">
+              <option value="inc" selected>+</option>
+              <option value="exp">-</option>
+          </select>
+          <input id="addDescription" type="text" class="menu_sub-menu_description" placeholder="Enter a description" maxlength="18">
+          <input id="addValue" type="number" class="menu_sub-menu_value" placeholder="Amount" min="0">
+          <input id="addDate" type="date" class="menu_sub-menu_date">
+          <button id="addBtn" class="menu_sub-menu_btn"><i class="fa fa-check"></i></button>
+        </div>
+        <div class="menu_sub-totals">
+          <div class="menu_sub-totals-income">
+            <span>Budget for <b class="set_month-b"></b></span>
+            <span id="totalIncome">$0.00</span>
+          </div>
+          <div class="menu_sub-totals-expense">
+            <span>Expenses for <b class="set_month-e"></b></span>
+            <span id="totalExpenses">$0.00</span>
+          </div>
+          </div>
+        </div>
+    </header>
+    <main class="content">
+      <div class="item-container">
+        <h1>Income</h1>
+        <ul id="incomeList" class="item-container_list">
+        </ul>
+      </div>
+      <div class="item-container">
+        <h1>Expense</h1>
+        <ul id="expenseList" class="item-container_list">
+
+        </ul>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="app-info">
+        <h2>Horizon Budget - Created by <a href="#" target="_blank">Daniel Clayton</a></h2>
+      </div>
+    </footer>
+  </div>
+<script type="text/javascript" src="js/bundle.js"></script></body>
+</html>
